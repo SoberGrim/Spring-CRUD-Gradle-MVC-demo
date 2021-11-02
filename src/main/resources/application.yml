@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: crud
+
+  jpa:
+    show-sql: false
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+#    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    properties:
+      hibernate.format_sql: false
+#      hibernate.jdbc.lob.non_contextual_creation: true
+    hibernate:
+      ddl-auto: create
+#    generate-ddl: true
+
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?createDatabaseIfNotExist=true&useUnicode=true&verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
+    username: root
+    password: admin
+#  datasource:
+#    driverClassName: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: postgres
+#    password: postgres
+
+
+
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+  thymeleaf:
+    enabled: true
+    enable-spring-el-compiler: true
+    prefix: /WEB-INF/pages/
+    suffix: .html
+
+  web:
+    resources:
+      cache:
+        period: P1D
+
+server:
+  port: 80
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
+    org: INFO
+
+
+
+
+
+
